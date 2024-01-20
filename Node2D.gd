@@ -17,11 +17,11 @@ func _enter_tree():
 	#if(OS.get_name() == "Android"):
 			#get_tree().root.content_scale_size = Vector2(3,3);
 	# use full path
-	if(FileAccess.file_exists("/home/harrison/CUDAMAX/7bmodel.safetensors")):
+	if(FileAccess.file_exists("res://7bmodel.safetensors")):
 		
 	
 		
-		model.loadModel(ProjectSettings.globalize_path("/home/harrison/CUDAMAX/7bmodel.safetensors"),4)
+		model.loadModel(ProjectSettings.globalize_path("res://7bmodel.safetensors"),8)
 	
 		print("Loaded Model")
 		#
