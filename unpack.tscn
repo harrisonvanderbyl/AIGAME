@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://blyawg0sac676"]
+
+[ext_resource type="Script" path="res://unpack.gd" id="1_p8rmh"]
+[ext_resource type="Texture2D" uid="uid://sf02s5jyobbc" path="res://biglogo.png" id="2_61qrf"]
+
+[node name="Unpack_tscn" type="Node2D"]
+script = ExtResource("1_p8rmh")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -105.0
+offset_top = -82.0
+offset_right = 1518.0
+offset_bottom = 954.0
+color = Color(1.03105e-06, 0.0976199, 0.00442182, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 481.0
+offset_top = 225.0
+offset_right = 915.0
+offset_bottom = 362.0
+text = "UNPACKING MODEL...
+Please Wait..."
+
+[node name="Biglogo" type="Sprite2D" parent="."]
+position = Vector2(567, 147)
+texture = ExtResource("2_61qrf")
+
+[node name="TextEdit" type="RichTextLabel" parent="."]
+offset_left = 593.0
+offset_top = 248.0
+offset_right = 669.0
+offset_bottom = 290.0
+text = "0%"
