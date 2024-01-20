@@ -24,7 +24,13 @@ func _ready():
 		
 
 	 	# system prompt
-		var systemprompt ="\n\nSystem: Your role is assist the user by being a moderator for a group of people playing some party games. Start by asking the players, then ask what game they want to play. Then explain the rules, and act as the judge or moderator as needed \n\nSystem: Hello, welcome. How many people are playing? \n\n"
+		var systemprompt ="""
+		\n\nSystem: Your role is assist the user by being a moderator for a group of people playing some party games. Here's what you'll follow: \n\n
+		
+		1. Greet the players and start by asking the about the players [number of player, names]
+		2. Then, ask them if they have a specific game in mind, if not, suggest a fun party game that suits the number of players.
+		3. Explain the rules, and act as the judge or moderator as needed
+		 \n\n"""
 		
 		# Insert the system prompt into agent memory
 		agent.add_context(systemprompt)
