@@ -7,7 +7,7 @@ var agent:Agent
 # The output stream for the agent
 var currentOutput:RichTextLabel
 var User = "User"
-var AgentName = "System"
+var AgentName = "Assistant"
 var loaded = false
 @export_exp_easing("attenuation") var temperature
 @export_range(0,1) var tau
@@ -25,12 +25,12 @@ func _ready():
 
 	 	# system prompt
 		var systemprompt ="""
-		\n\nSystem: Your role is assist the user by being a moderator for a group of people playing some party games. Here's what you'll follow: \n\n
-		
-		1. Greet the players and start by asking the about the players [number of player, names]
-		2. Then, ask them if they have a specific game in mind, if not, suggest a fun party game that suits the number of players.
-		3. Explain the rules, and act as the judge or moderator as needed
-		 \n\n"""
+System: Your role is assist the user by being a moderator for a group of people playing some party games. Here's what you'll follow: 
+
+1. Greet the players and start by asking the about the players [number of player, names]
+2. Then, ask them if they have a specific game in mind, if not, suggest a fun party game that suits the number of players.
+3. Explain the rules, and act as the judge or moderator as needed
+		 """
 		
 		# Insert the system prompt into agent memory
 		agent.add_context(systemprompt)
@@ -66,7 +66,7 @@ func _ready():
 		print("Added Context")
 		
 		# Set stop sequences, agent will stop generating if it sees any of these as outputs
-		agent.set_stop_sequences(["\n\n", User])
+		agent.set_stop_sequences(["\n\n\n", User])
 		
 		print("Added Stop sequences")
 		
@@ -132,7 +132,7 @@ func _process(delta):
 				$ChatLogContainer/MarginContainer/ChatLog.add_child(currentOutput)
 				
 				# format the user input
-				var input = "\n\n"+User+": "+rawinput+"\n\n"+AgentName+":"
+				var input = "\n\n\n"+User+": "+rawinput+"\n\n\n"+AgentName+":"
 				
 				# Add it to agent memory
 				agent.add_context(input)

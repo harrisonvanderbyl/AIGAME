@@ -26,8 +26,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 19
 script = ExtResource("2_ffpws")
-temperature = 1.06462
-tau = 0.703
+temperature = 3.83795
+tau = 0.526
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/ChatBox"]
 layout_mode = 2
@@ -51,7 +51,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.466529, 0.686366, 0, 1)
-text = "Spanish To English
+text = "Party Game Moderator
 "
 
 [node name="Button2" type="Button" parent="MarginContainer2/ChatBox/HBoxContainer/MarginContainer/HBoxContainer"]
